@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color="red">Health</font><font color="Blue">Sys</font></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#" th:href="@{/bem-vindo}">Página Principal</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administração
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" th:href="@{/atendimentos}">Lista de Atendimentos</a></li>
+                    <li><a href="#" th:href="@{/usuarios}">Lista de Usuários</a></li>
+                    <li><a href="#" th:href="@{/doencas}">Lista de Doenças</a></li>
+                </ul>
+            </li>
+            <!--<li><a href="#" th:href="@{/}">Page 3</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li th:if="(${#httpServletRequest.remoteUser} == null)">
+                <a href="#" th:href="@{/register}"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+            </li>
+            <li th:if="(${#httpServletRequest.remoteUser} == null)">
+                <a href="#" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            </li>
+            <li class="dropdown" th:if="(${#httpServletRequest.remoteUser} != null)">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <span class="glyphicon glyphicon-log-in"></span> Meu Perfil <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" th:href="@{/}">Visualizar Perfil</a></li>
+                    <li><a href="#" th:href="@{/}">Editar Perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" th:href="@{/logout}">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+</body>
+</html>

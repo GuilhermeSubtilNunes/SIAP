@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>    
+<div th:fragment="content">
+    <h2>Lista de Doenças</h2>
+    <div style="margin: 10px" class="text-right">
+        <a href="#" th:href="@{/doencas/criar}" class="btn btn-primary" role="button">Adicionar nova Doença</a>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>            
+            <th>Paciente</th>
+            <th>Nome</th>
+            <th>Sintoma</th>
+            <th>Causa</th>
+            <th>Tratamento</th>
+            <th>Patologia</th>            
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="doenca : ${doencas}">            
+            <td th:inline="text">[[${doenca.cid}]]</td>
+            <td th:inline="text">[[${doenca.nome}]]</td>
+            <td th:inline="text">[[${doenca.sintoma}]]</td>
+            <td th:inline="text">[[${doenca.causa}]]</td>
+            <td th:inline="text">[[${doenca.tratamento}]]</td>
+            <td th:inline="text">[[${doenca.patologia}]]</td>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Ações <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" th:href="@{/doencas/editar/{id}(id=${doenca.id})}">Editar</a></li>
+                        <li><a href="#" th:href="@{/doencas/remover/{id}(id=${doenca.id})}">Remover</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

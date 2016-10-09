@@ -1,0 +1,33 @@
+<div th:fragment="content">	
+    <h2>Lista de Atendimentos</h2>
+    <div style="margin: 10px" class="text-right">
+        <a href="#" th:href="@{/atendimentos/criar}" class="btn btn-primary" role="button">Protocolar novo Atendimento</a>
+    </div>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Protocolo</th>
+					<th>Diagnóstico</th>
+                                        <th>Descrição</th>                                        
+                                        <th>Data do Registro</th>                                 
+				</tr>                                 
+			</thead>
+			<tbody>
+				<tr th:each="atendimento : ${atendimentos}">
+				<td><a th:inline="text">[[${atendimento.id}]]</a></td>	
+                                <td><a th:inline="text">[[${atendimento.titulo}]]</a></td>
+                                <td><a th:inline="text">[[${atendimento.descricao}]]</a></td>                                
+                                <td><a th:inline="text">[[${atendimento.dataInicio}]]</a></td>
+                                        <th>
+                                            <a href="#" th:href="@{/atendimentos/visualizar/{id}(id=${atendimento.id})}" th:inline="text">
+						<button type="button" class="btn btn-info" alt="Pesquisar" title="Pesquisar">
+							
+                                                    <span class="glyphicon glyphicon-search"></span>
+						</button>	
+                                            </a>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+</div>
+

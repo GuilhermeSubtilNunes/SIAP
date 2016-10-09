@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="content">
+    <h2>Novo Usuário</h2>
+    <form class="form-horizontal" method="POST" th:action="@{/usuarios/criar}" enctype="application/x-www-form-urlencoded">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="nome">Nome:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nome" name="nome" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="email">Email:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" name="email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="login">Login:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="login" name="login" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="senha">Senha:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="senha" name="senha"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="sexo">Sexo:</label>
+            <div class="col-sm-10">
+                <select name="sexo" id="sexo" class="form-control selectpicker">
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="FEMININO">Feminino</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="tipoSanguineo">Tipo Sanguineo:</label>
+            <div class="col-sm-10">
+                <select name="tipoSanguineo" id="tipoSanguineo" class="form-control selectpicker">
+                    <option value="A_NEGATIVO">A-</option>
+                    <option value="A_POSITIVO">A+</option>
+                    <option value="B_NEGATIVO">B-</option>
+                    <option value="B_POSITIVO">B+</option>
+                    <option value="AB_NEGATIVO">AB-</option>
+                    <option value="AB_POSITIVO">AB+</option>
+                    <option value="O_NEGATIVO">O-</option>
+                    <option value="O_POSITIVO">O+</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="data_nascimento">Data Nascimento:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="telefone">Telefone:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="telefone" name="telefone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="estado">Estado:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="estado" name="estado" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="cidade">Cidade:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cidade" name="cidade" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="cep">Cep:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cep" name="cep" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="observacoes">Observações:</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="observacoes" name="observacoes"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="role">Nível:</label>
+            <div class="col-sm-10">
+                <select name="role" id="role" class="form-control selectpicker">
+                    <option value="USER">Usuário</option>
+                    <option value="MEDIC">Médico</option>
+                    <option value="ADMIN">Administrador</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-default">Criar</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="persistence">
+        <class>br.com.senacrs.entidades.AcessoAtendimento</class>
+        <class>br.com.senacrs.entidades.Anexo</class>
+        <class>br.com.senacrs.entidades.Atendimento</class>
+        <class>br.com.senacrs.entidades.Doenca</class>
+        <class>br.com.senacrs.entidades.DoencasPacientes</class>
+        <class>br.com.senacrs.entidades.RespostaAtendimento</class>
+        <class>br.com.senacrs.entidades.Usuario</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/healthsys"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username"/>
+            <property name="hibernate.connection.password"/>
+        </properties>
+    </persistence-unit>
+</persistence>
